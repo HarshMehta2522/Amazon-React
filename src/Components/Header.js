@@ -21,10 +21,12 @@ function Header() {
       </div>
 
       <div className="header-nav">
-        <div className="header-option">
-          <span className="header-option1">Hello</span>
-          <span className="header-option2">Sign in</span>
-        </div>
+        <Link  to="/login" >
+          <div className="header-option">
+            <span className="header-option1">Hello</span>
+            <span className="header-option2">Sign in</span>
+          </div>
+        </Link>
         <div className="header-option">
           <span className="header-option1">Retruns</span>
           <span className="header-option2">& Orders</span>
@@ -37,7 +39,7 @@ function Header() {
       <Link to="/checkout">
         <div className="header-basket">
           <ShoppingBasketIcon />
-          <span className="header-basket iteam-count">{basket?.length}</span>
+          <p className="header-basket iteam-count">{basket.length}</p>
         </div>
       </Link>
     </div>

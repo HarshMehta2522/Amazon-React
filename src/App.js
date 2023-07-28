@@ -5,18 +5,21 @@ import Home from "./Components/home";
 import Checkout from "./Components/checkout";
 import Footer from "./Components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import Login from "./Components/Login";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+          
         <Routes>
-          <Route path="/checkout" element={<Checkout/>} />
-          <Route path="/" element={<Home />} />
+          <Route path="/checkout" element={<><Header/><Checkout/></>} />
+          <Route path="/" element={<><Header/><Home/><Footer/></>} />
+          <Route path="/Login" element={<Login />} />
+          
         </Routes>
-        <Footer />
+        
+      
       </div>
     </BrowserRouter>
   );
