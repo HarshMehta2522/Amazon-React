@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import Header from "./Header";
-import Home from "./home";
-import Checkout from "./checkout";
+import Header from "./Components/Header";
+import Home from "./Components/home";
+import Checkout from "./Components/checkout";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
