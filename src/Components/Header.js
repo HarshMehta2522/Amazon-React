@@ -17,7 +17,7 @@ function Header() {
       <Link to="/">
         <img
           className="header-logo"
-          src="https://www.nicepng.com/png/detail/16-167642_amazon-logo-amazon-logo-white-text.png"
+          src="https://o.remove.bg/downloads/8664a6c3-52b5-4c52-b0c4-689865758a29/16-167642_amazon-logo-amazon-logo-white-text-removebg-preview.png"
           alt="Logo"
         />
       </Link>
