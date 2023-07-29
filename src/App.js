@@ -10,36 +10,50 @@ import { auth } from "./Firebase";
 import { useStateValue } from "./StateProvider";
 
 function App() {
- const[,dispatch]=useStateValue();
-  useEffect(()=>{
-    auth.onAuthStateChanged(authUser=>{
-      console.log('the user is>>>',authUser);
-      if(authUser){
+  const [, dispatch] = useStateValue();
+
+  useEffect(() => {
+    // Add an empty dependency array to run the effect only once
+    auth.onAuthStateChanged((authUser) => {
+      console.log("the user is>>>", authUser);
+      if (authUser) {
         dispatch({
-          type:'SET_USER',
-          user: authUser
+          type: "SET_USER",
+          user: authUser,
         });
-      }
-      else{
+      } else {
         dispatch({
-          type:'SET_USER',
-          user:null
+          type: "SET_USER",
+          user: null,
         });
       }
     });
-  });
+  }, [dispatch]); 
   return (
     <BrowserRouter>
       <div className="App">
-          
         <Routes>
-          <Route path="/checkout" element={<><Header/><Checkout/></>} />
-          <Route path="/" element={<><Header/><Home/><Footer/></>} />
+          <Route
+            path="/checkout"
+            element={
+              <>
+                <Header />
+                <Checkout />
+              </>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <Home />
+                <Footer />
+              </>
+            }
+          />
           <Route path="/Login" element={<Login />} />
-          
         </Routes>
-        
-      
       </div>
     </BrowserRouter>
   );

@@ -22,3 +22,20 @@
 .item-count{
     text-decoration: none;
 } 
+@media (max-width: 600px) {
+    .home-row {
+      flex-wrap: wrap;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  
+  /* Additional media queries for larger screens if needed */
+  @media (min-width: 768px) {
+    .home-image {
+      margin-bottom: -200px;
+    }
+  }
+  
+  /* Add a media query for even larger screens */
+ 
