@@ -57,9 +57,13 @@
     color: white;
     align-items: center;
     text-decoration: none;
+    
 }
 .iteam-count{
     margin-left:10px ;
     margin-right:10px ;
     text-decoration: none;
 }
+a {
+    text-decoration: none;
+  }
