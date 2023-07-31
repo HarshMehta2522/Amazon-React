@@ -1,0 +1,89 @@
+[33mcommit 41c07c6a02afd148dc07045b6ee43921c840eb2b[m[33m ([m[1;36mHEAD -> [m[1;32mpayment[m[33m, [m[1;31morigin/payment[m[33m)[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Tue Aug 1 00:54:28 2023 +0530
+
+    optimize
+
+[33mcommit 0cf3638f6d3a59a58256b0647e2bcf58fa5262ed[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Tue Aug 1 00:44:45 2023 +0530
+
+    Frontend Completed With payment
+
+[33mcommit dc0a970338b20b6458dab81fc1aac6961986cc89[m[33m ([m[1;32mmain[m[33m)[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Sat Jul 29 23:38:48 2023 +0530
+
+    ChechoutPage Added
+
+[33mcommit 2b0403f3a868e5aab23146597b254b3e895920cf[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Sat Jul 29 21:42:28 2023 +0530
+
+    Bug Fixes
+
+[33mcommit ea840980557e3f0630454176dfb6e76c9093c824[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Sat Jul 29 17:55:07 2023 +0530
+
+    Deployed throgh Firebase
+
+[33mcommit 0c6cb163d18998d954b1b047fb9ffe06c17dace4[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Sat Jul 29 01:32:33 2023 +0530
+
+    Firebase Installed
+
+[33mcommit 8f9c39f122a8fc636fd2cb80e7bee2ba6a3e3cf7[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Sat Jul 29 00:23:43 2023 +0530
+
+    Footer added
+
+[33mcommit 8086190abd00ec9511389e65eaa16815fba2d9e6[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Fri Jul 28 22:25:16 2023 +0530
+
+    Organized Components
+
+[33mcommit cb86b4a01e9594397b2dc57cbe1c07e693c3e170[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Fri Jul 28 20:11:45 2023 +0530
+
+    Checkout Page Done
+
+[33mcommit 36ce50ecda709f77d78030e17311f5fa9bf9d4af[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Fri Jul 28 02:30:22 2023 +0530
+
+    Chekout Page started
+
+[33mcommit 1f72430fbee91bc3fc69f82bc834aa0ef7d35509[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Thu Jul 27 23:55:02 2023 +0530
+
+    Buile Home-Page
+
+[33mcommit f446999aa1c9eefee89cb21b2d6d80cd8e3bd516[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Thu Jul 27 22:02:52 2023 +0530
+
+    Header Complete
+
+[33mcommit 2cd5522c39d40fa2c0bfd49138f901973c584bd6[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Thu Jul 27 19:08:43 2023 +0530
+
+    New Project Started
+
+[33mcommit a4a394e85841e7c2d3183ed115090b68483e7bde[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Thu Jul 27 19:03:26 2023 +0530
+
+    first commit
+
+[33mcommit 1a9319e636dfc0505bfd8ca7069254097c221490[m
+Author: HarshMehta2522 <maheta.hrs2522@gmail.com>
+Date:   Thu Jul 27 18:58:46 2023 +0530
+
+    Initialize project using Create React App
