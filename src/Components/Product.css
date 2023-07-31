@@ -36,3 +36,22 @@
 .product-rating{
     display: flex;
 }
+.product button {
+  background-color: #f0c14b;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Add transitions for box shadow and opacity */
+  position: relative; /* Use relative positioning */
+}
+
+/* Add a nice hover animation to the button when hovering */
+.product button:hover {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow on hover */
+  opacity: 1.2; /* Reduce opacity on hover */
+}
+.product button:active {
+    transform: scale(0.95); /* Scale the button down slightly on click */
+  }

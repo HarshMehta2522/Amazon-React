@@ -1,12 +1,26 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
 import { auth } from "../Firebase";
+
 function Header() {
   const[{basket,user}]=useStateValue();
+  useEffect(() => {
+    const onRouteChange = () => {
+      window.scrollTo(0, 0); // Scroll to the top of the page on route change
+    };
+
+    // Add an event listener to the "popstate" event, which is triggered when the route changes
+    window.addEventListener('popstate', onRouteChange);
+
+    // Remove the event listener when the component unmounts to avoid memory leaks
+    return () => {
+      window.removeEventListener('popstate', onRouteChange);
+    };
+  }, []);
   const handleAuthentication=()=>{
     if(user){
       auth.signOut();
@@ -17,7 +31,7 @@ function Header() {
       <Link to="/">
         <img
           className="header-logo"
-          src="https://www.nicepng.com/png/detail/16-167642_amazon-logo-amazon-logo-white-text.png"
+          src="image-removebg-preview (6).png"
           alt="Logo"
         />
       </Link>
