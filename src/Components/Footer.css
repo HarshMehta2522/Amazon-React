@@ -19,6 +19,12 @@
 ul{
     margin-top: 40px;
 }
+.footer p{
+    font-size: 14px;
+}
+.footer h5{
+    margin-bottom: 10px;
+}
 .foot2{
     height: 300px;
     padding-top: 10px;
@@ -65,6 +71,56 @@ ul{
     padding-top: 25px;
 }
 .copyright{
+    
     font-size:10px;
     padding-top: 25px;
 }
+
+/* Footer.css */
+
+/* Footer container animation */
+.footer {
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  /* Back to Top link animation */
+  .foot1 {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .foot1:hover {
+    transform: scale(1.1);
+  }
+  
+  /* List items animation */
+  .footer ul li {
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .footer ul li:hover {
+    color: #ff9900; /* Change to your desired hover color */
+  }
+  
+  /* Hover animation for all <p> and <h> tags */
+  .footer p:hover,
+  .footer h5:hover {
+    color: #ff9900; /* Change to your desired hover color */
+    text-decoration: underline;
+  }
+  
+  /* Copyright text animation */
+  .foot4 p {
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 5px #ff9900; /* Change to your desired glow color */
+    }
+    100% {
+      text-shadow: 0 0 10px #ff9900; /* Change to your desired glow color */
+    }
+  }
+  
