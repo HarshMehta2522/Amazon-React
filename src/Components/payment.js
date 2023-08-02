@@ -37,10 +37,10 @@ function Payment() {
       });
       setClientSecret(response.data.clientSecret);
     };
-    
+
     getClientSecret();
   }, [basket]);
- 
+
 
   const handleChange = (event) => {
     setDisabled(event.empty);
@@ -61,7 +61,7 @@ function Payment() {
       const payload = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: cardElement,
-        },
+          },
       });
 
       if (payload.error) {
@@ -71,16 +71,16 @@ function Payment() {
         setError(null);
         setProcessing(false);
         setSucceeded(true);
-        navigate("/order", { replace: true });
+        navigate("/orders", { replace: true });
       }
     } catch (error) {
       setError(`Payment failed: ${error.message}`);
       navigate("/orders", { replace: true });
-      setProcessing(false);
+        setProcessing(false);
       setSucceeded(false);
     }
   };
-  
+
 
   const totalValue = getBasketTotal(basket);
 
@@ -123,18 +123,17 @@ function Payment() {
             <h3>Payment Method</h3>
           </div>
           <div className="payment-details">
-            <Elements stripe={stripe}> {/* Wrap the Payment component with Elements */}
-              <form onSubmit={handleSubmit}>
+            {/* Wrap the Payment component with Elements */}
+            <form onSubmit={handleSubmit}>
                 <CardElement onChange={handleChange} />
-                <div className="payment-priceContainer">
-                  <h3>Order Total: {formatCurrency(totalValue)}</h3>
-                  <button disabled={processing || disabled || succeeded}>
-                    <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
-                  </button>
-                </div>
-                {error && <div>{error}</div>}
-              </form>
-            </Elements>
+              <div className="payment-priceContainer">
+                <h3>Order Total: {formatCurrency(totalValue)}</h3>
+                <button disabled={processing || disabled || succeeded}>
+                  <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                </button>
+              </div>
+              {error && <div>{error}</div>}
+            </form>
           </div>
         </div>
       </div>
