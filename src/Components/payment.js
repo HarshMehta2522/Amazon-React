@@ -28,9 +28,10 @@ function Payment() {
 
   useEffect(() => {
     const getClientSecret = async () => {
+      console.log(process.env)
       const response = await axios({
         method: "post",
-        url: `/payment/create`,
+        url: `payment/create`,
         data: {
           amount: (getBasketTotal(basket)*100 ), // Convert amount to cents as an integer
         },
