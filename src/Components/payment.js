@@ -76,7 +76,7 @@ function Payment() {
       }
     } catch (error) {
       setError(`Payment failed: ${error.message}`);
-      navigate("/orders", { replace: true });
+      // navigate("/orders", { replace: true });
         setProcessing(false);
       setSucceeded(false);
     }
