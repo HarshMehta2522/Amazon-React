@@ -1,4 +1,4 @@
-/*
+
 .orders {
     width: 100%;
     margin: 0;
@@ -112,13 +112,4 @@
     @page {
       margin-top: 500px;
     }
-  } */
-
-
-  .orders{
-    padding: 20px 80px;
-
-  }
-  .order h1{
-    margin: 30px 0;
   }

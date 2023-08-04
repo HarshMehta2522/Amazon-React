@@ -11,7 +11,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Payment from "./Components/payment";
 import Orders from "./Components/orders";
-import { useStateValue } from "./StateProvider"; // Import useStateValue
+import { useStateValue } from "./StateProvider";
+import OrderSummery from "./Components/orderSummery";
 
 const promise = loadStripe(
   "pk_test_51NZXGVSGyUMmynkIkVjt0huPAxWCXUfxiLS2JUIyvA47cQeaJPSV0XK34YmR70E6uOtb5XRuteULOfKjOARH480p00AVM6SdGk"
@@ -53,10 +54,7 @@ const App = () => {
       <ScrollToTop>
         <div className="App">
           <Routes>
-            <Route
-              path="/login"
-              element={<Login/>}
-            ></Route>
+            <Route path="/login" element={<Login />}></Route>
             <Route
               path="/checkout"
               element={
@@ -89,7 +87,24 @@ const App = () => {
                 </>
               }
             />
-            <Route path="/orders" element={<Orders />} />
+            <Route
+              path="/orders"
+              element={
+                <>
+                  <Header />
+                  <Orders />
+                </>
+              }
+            />
+            <Route
+              path="/orderSummery"
+              element={
+                <>
+                  <Header />
+                  <OrderSummery />
+                </>
+              }
+            />
             <Route path="/Login" element={<Login />} />
           </Routes>
         </div>

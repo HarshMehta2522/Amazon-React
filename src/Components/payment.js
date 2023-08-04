@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./payment.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
-import { CardElement, Elements, useElements, useStripe } from "@stripe/react-stripe-js";
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { getBasketTotal } from "../reducer";
 import axios from "../axios";
 import CheckoutProduct from "./CheckoutProduct";
+import { db } from "../Firebase";
 
 const formatCurrency = (value) => {
   const formattedValue = parseFloat(value).toFixed(2);
@@ -17,7 +18,7 @@ const formatCurrency = (value) => {
 function Payment() {
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState(false);
-  const [{ basket, user }] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -28,12 +29,12 @@ function Payment() {
 
   useEffect(() => {
     const getClientSecret = async () => {
-      console.log(process.env)
+      console.log(process.env);
       const response = await axios({
         method: "post",
         url: `payment/create`,
         data: {
-          amount: (getBasketTotal(basket)*100 ), // Convert amount to cents as an integer
+          amount: getBasketTotal(basket) * 100, // Convert amount to cents as an integer
         },
       });
       setClientSecret(response.data.clientSecret);
@@ -41,47 +42,51 @@ function Payment() {
 
     getClientSecret();
   }, [basket]);
-
-
+  
   const handleChange = (event) => {
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "");
   };
-
+  console.log("clientsecret is ",clientSecret)
+  console.log("user is",user)
+  
+  
   const handleSubmit = async (event) => {
+    // do all the fancy stripe stuff...
     event.preventDefault();
-    try {
-      setProcessing(true);
+    setProcessing(true);
 
-      const cardElement = elements.getElement(CardElement);
-
-      if (!cardElement) {
-        throw new Error("CardElement not found.");
-      }
-
-      const payload = await stripe.confirmCardPayment(clientSecret, {
+    const payload = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
-          card: cardElement,
-          },
-      });
+            card: elements.getElement(CardElement)
+        }
+    }).then(({ paymentIntent }) => {
+        // paymentIntent = payment confirmation
 
-      if (payload.error) {
-        setError(`Payment failed: ${payload.error.message}`);
-        setSucceeded(false);
-      } else {
-        setError(null);
-        setProcessing(false);
+        db
+          .collection('users')
+          .doc(user?.uid)
+          .collection('orders')
+          .doc(paymentIntent.id)
+          .set({
+              basket: basket,
+              amount: paymentIntent.amount,
+              created: paymentIntent.created
+          })
+
         setSucceeded(true);
-        navigate("/orders", { replace: true });
-      }
-    } catch (error) {
-      setError(`Payment failed: ${error.message}`);
-      // navigate("/orders", { replace: true });
-        setProcessing(false);
-      setSucceeded(false);
-    }
-  };
+        setError(null)
+        setProcessing(false)
 
+        // dispatch({
+        //     type: 'EMPTY_BASKET'
+        // })
+
+        navigate("/orderSummery", { replace: true });
+
+    })
+
+}
 
   const totalValue = getBasketTotal(basket);
 
@@ -109,7 +114,6 @@ function Payment() {
           <div className="payment-items">
             {basket.map((item) => (
               <CheckoutProduct
-                key={item.id}
                 id={item.id}
                 title={item.title}
                 image={item.image}
@@ -126,7 +130,7 @@ function Payment() {
           <div className="payment-details">
             {/* Wrap the Payment component with Elements */}
             <form onSubmit={handleSubmit}>
-                <CardElement onChange={handleChange} />
+              <CardElement onChange={handleChange} />
               <div className="payment-priceContainer">
                 <h3>Order Total: {formatCurrency(totalValue)}</h3>
                 <button disabled={processing || disabled || succeeded}>

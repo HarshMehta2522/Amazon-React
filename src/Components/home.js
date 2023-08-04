@@ -20,6 +20,7 @@ function Home() {
             rating={4}
           />
           <Product
+            id="56123456"
             title="The Lean StartUp"
             price={199.99}
             image="https://m.media-amazon.com/images/I/51k62mBthIL._AC_SY200_.jpg"
