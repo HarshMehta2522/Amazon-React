@@ -1,6 +1,6 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://127.0.0.1:5000/api",
+  baseURL: "https://amzon-backend.netlify.app/api",
 });
 export default instance;
