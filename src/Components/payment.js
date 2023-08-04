@@ -18,7 +18,7 @@ const formatCurrency = (value) => {
 function Payment() {
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState(false);
-  const [{ basket, user }, dispatch] = useStateValue();
+  const [{ basket, user }] = useStateValue();
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -82,7 +82,7 @@ function Payment() {
         //     type: 'EMPTY_BASKET'
         // })
 
-        navigate("/orderSummery", { replace: true });
+        navigate("./orderSummery", { replace: true });
 
     })
 

@@ -97,7 +97,7 @@ const App = () => {
               }
             />
             <Route
-              path="/orderSummery"
+               exact path="./orderSummery"
               element={
                 <>
                   <Header />
