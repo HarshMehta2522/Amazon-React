@@ -82,7 +82,7 @@ function Payment() {
         //     type: 'EMPTY_BASKET'
         // })
 
-        navigate("./orderSummery", { replace: true });
+        navigate("/orderSummery", { replace: true });
 
     })
 
