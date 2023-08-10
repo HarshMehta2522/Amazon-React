@@ -39,8 +39,7 @@
 
 .payment-item {
   display: flex;
-  /* justify-content: left; Center-align the cart item (product) */
-  width: 100%; /* Take up full width */
+ 
 }
 
 /* Responsive styles for small screens */
