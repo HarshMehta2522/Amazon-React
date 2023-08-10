@@ -1,35 +1,60 @@
+/* Common styles for all screen sizes */
 .payment {
   background-color: white;
 }
+
 .payment h1 {
   text-align: center;
   padding: 10px;
   font-weight: 400;
   background-color: rgb(234, 237, 237);
   border-bottom: 1px solid lightgray;
+  font-size: 18px;
 }
+
 .payment-container > h1 a {
   text-decoration: none;
 }
+
 .payment-section {
   display: flex;
+  flex-wrap: wrap; /* Allow flex items to wrap to new rows */
   padding: 20px;
   margin: 0 20px;
   border-bottom: 1px solid lightgray;
 }
+
 .payment-title {
-  flex: 0.2;
+  flex-basis: 20%; /* Adjust flex basis to control width */
+  flex-grow: 1; /* Allow title to grow when wrapping occurs */
+  margin-bottom: 10px; /* Add space between title and other sections */
+  font-size: 16px; /* Adjust font size for title */
 }
-.payment-address,
-.payment-item {
-  flex: 0.8;
-}
+
 .payment-address,
 .payment-item,
 .payment-details {
-  flex: 0.8;
+  flex-basis: 80%; /* Adjust flex basis to control width */
 }
 
-.payment_details{
-  
+.payment-item {
+  display: flex;
+  /* justify-content: left; Center-align the cart item (product) */
+  width: 100%; /* Take up full width */
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 500px) {
+  .payment h1 {
+      font-size: 16px;
+  }
+
+  .payment-section {
+      padding: 10px;
+      margin: 0;
+  }
+
+  .payment-title {
+      font-size: 14px;
+  }
 }

@@ -21,9 +21,9 @@ function Home() {
           />
           <Product
             id="56123456"
-            title="The Lean StartUp"
+            title="Sony Alpha ILCE-7M3K Full-Frame 24.2MP Mirrorless Digital SLR Camera with 28-70mm Zoom Lens "
             price={199.99}
-            image="https://m.media-amazon.com/images/I/51k62mBthIL._AC_SY200_.jpg"
+            image="https://m.media-amazon.com/images/I/71j3bPnm+UL._AC_UY218_.jpg"
             rating={4}
           />
         </div>

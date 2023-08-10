@@ -16,3 +16,22 @@
     padding: 10px;
     border-bottom: 1px solid lightgray;
 }
+@media (max-width: 500px) {
+    .checkout {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .checkout-title {
+        margin-right: 0;
+        margin-bottom: 10px;
+        padding: 5px;
+        text-align: center;
+        border: none;
+    }
+
+    .checkout-ad {
+        width: 100%;
+        max-width: 100%; /* Adjust maximum width */
+    }
+}

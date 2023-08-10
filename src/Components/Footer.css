@@ -1,7 +1,9 @@
-.footer{
+/* Common styles for all screen sizes */
+.footer {
     margin-top: 10px;
 }
-.foot1{
+
+.foot1 {
     height: 30px;
     background-color: #37475A;
     color: white;
@@ -10,22 +12,27 @@
     justify-content: center;
     align-items: center;
 }
-.foot2  a{
+
+.foot2 a {
     display: flex;
     font-size: 15px;
     color: #dddddd;
     margin-top: 7px;
 }
-ul{
+
+ul {
     margin-top: 40px;
 }
-.footer p{
+
+.footer p {
     font-size: 14px;
 }
-.footer h5{
+
+.footer h5 {
     margin-bottom: 10px;
 }
-.foot2{
+
+.foot2 {
     height: 300px;
     padding-top: 10px;
     font-size: 25px;
@@ -35,8 +42,7 @@ ul{
     justify-content: space-evenly;
 }
 
-
-.foot3{
+.foot3 {
     border-top: 0.5px solid white;
     background-color: #232f3e;
     height: 68px;
@@ -44,7 +50,8 @@ ul{
     justify-content: center;
     align-items: center;
 }
-.logo{
+
+.logo {
     background-image: url("http://pngimg.com/uploads/amazon/amazon_PNG11.png");
     background-size: 100%;
     height: 50px;
@@ -52,75 +59,79 @@ ul{
     background-size: cover;
 }
 
-
-
-.foot4{
+.foot4 {
     background-color: #0F1111;
     height: 100px;
     color: white;
     display: block;
-    text-align:center;
+    text-align: center;
     justify-content: center;
-} 
+}
 
-.pages{
-    font-size:16px;
+.pages {
+    font-size: 16px;
     display: flex;
     justify-content: center;
-    text-align:center;
-    padding-top: 25px;
-}
-.copyright{
-    
-    font-size:10px;
+    text-align: center;
     padding-top: 25px;
 }
 
-/* Footer.css */
+.copyright {
+    font-size: 10px;
+    padding-top: 25px;
+}
 
 /* Footer container animation */
 .footer {
     animation: fadeInUp 1s ease-in-out;
-  }
-  
-  /* Back to Top link animation */
-  .foot1 {
+}
+
+/* Back to Top link animation */
+.foot1 {
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
-  }
-  
-  .foot1:hover {
+}
+
+.foot1:hover {
     transform: scale(1.1);
-  }
-  
-  /* List items animation */
-  .footer ul li {
+}
+
+/* List items animation */
+.footer ul li {
     cursor: pointer;
     transition: color 0.2s ease-in-out;
-  }
-  
-  .footer ul li:hover {
+}
+
+.footer ul li:hover {
     color: #ff9900; /* Change to your desired hover color */
-  }
-  
-  /* Hover animation for all <p> and <h> tags */
-  .footer p:hover,
-  .footer h5:hover {
+}
+
+/* Hover animation for all <p> and <h> tags */
+.footer p:hover,
+.footer h5:hover {
     color: #ff9900; /* Change to your desired hover color */
     text-decoration: underline;
-  }
-  
-  /* Copyright text animation */
-  .foot4 p {
+}
+
+/* Copyright text animation */
+.foot4 p {
     animation: glow 1s ease-in-out infinite alternate;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+  .footer {
+      font-size: 12px; /* Adjust font size for the entire footer */
   }
-  
-  @keyframes glow {
-    0% {
-      text-shadow: 0 0 5px #ff9900; /* Change to your desired glow color */
-    }
-    100% {
-      text-shadow: 0 0 10px #ff9900; /* Change to your desired glow color */
-    }
+
+  .foot1,
+  .foot2 a,
+  ul li,
+  .footer p,
+  .footer h5,
+  .pages,
+  .copyright {
+      font-size: 10px; /* Adjust font size for individual elements */
   }
-  
+}
+
